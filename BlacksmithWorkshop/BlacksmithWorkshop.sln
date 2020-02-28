@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlacksmithWorkshopView", "BlacksmithWorkshopView\BlacksmithWorkshopView.csproj", "{31FB4005-90C2-454B-9458-3FA56C735DDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlacksmithWorkshopBusinessLogic", "BlacksmithWorkshopBusinessLogic\BlacksmithWorkshopBusinessLogic.csproj", "{89F08EAA-3578-4F47-B534-1889DF5CFF2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlacksmithWorkshopListImplement", "BlacksmithWorkshopListImplement\BlacksmithWorkshopListImplement.csproj", "{62536EFB-4E5C-4AEF-AC85-3B71812D8FA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31FB4005-90C2-454B-9458-3FA56C735DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FB4005-90C2-454B-9458-3FA56C735DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FB4005-90C2-454B-9458-3FA56C735DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FB4005-90C2-454B-9458-3FA56C735DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F08EAA-3578-4F47-B534-1889DF5CFF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F08EAA-3578-4F47-B534-1889DF5CFF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F08EAA-3578-4F47-B534-1889DF5CFF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F08EAA-3578-4F47-B534-1889DF5CFF2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62536EFB-4E5C-4AEF-AC85-3B71812D8FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62536EFB-4E5C-4AEF-AC85-3B71812D8FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62536EFB-4E5C-4AEF-AC85-3B71812D8FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62536EFB-4E5C-4AEF-AC85-3B71812D8FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C53BD79C-23B0-4CA7-BAB1-ED3EA8700EE0}
+	EndGlobalSection
+EndGlobal
