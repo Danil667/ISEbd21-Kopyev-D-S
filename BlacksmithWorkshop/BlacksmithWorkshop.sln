@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlacksmithWorkshopView", "BlacksmithWorkshopView\BlacksmithWorkshopView.csproj", "{31FB4005-90C2-454B-9458-3FA56C735DDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlacksmithWorkshopBusinessLogic", "BlacksmithWorkshopBusinessLogic\BlacksmithWorkshopBusinessLogic.csproj", "{89F08EAA-3578-4F47-B534-1889DF5CFF2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlacksmithWorkshopBusinessLogic", "BlacksmithWorkshopBusinessLogic\BlacksmithWorkshopBusinessLogic.csproj", "{89F08EAA-3578-4F47-B534-1889DF5CFF2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlacksmithWorkshopListImplement", "BlacksmithWorkshopListImplement\BlacksmithWorkshopListImplement.csproj", "{62536EFB-4E5C-4AEF-AC85-3B71812D8FA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlacksmithWorkshopListImplement", "BlacksmithWorkshopListImplement\BlacksmithWorkshopListImplement.csproj", "{62536EFB-4E5C-4AEF-AC85-3B71812D8FA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
