@@ -32,6 +32,9 @@
 			this.textBoxPrice = new System.Windows.Forms.TextBox();
 			this.groupBoxComponents = new System.Windows.Forms.GroupBox();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
+			this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Billets = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.buttonRef = new System.Windows.Forms.Button();
 			this.buttonDel = new System.Windows.Forms.Button();
 			this.buttonUpd = new System.Windows.Forms.Button();
@@ -74,11 +77,33 @@
 			// 
 			// dataGridView
 			// 
+			this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView.Location = new System.Drawing.Point(7, 20);
+			this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.Billets,
+            this.Count});
+			this.dataGridView.Location = new System.Drawing.Point(6, 19);
 			this.dataGridView.Name = "dataGridView";
 			this.dataGridView.Size = new System.Drawing.Size(397, 273);
 			this.dataGridView.TabIndex = 4;
+			// 
+			// ColumnId
+			// 
+			this.ColumnId.HeaderText = "Id";
+			this.ColumnId.Name = "ColumnId";
+			this.ColumnId.Visible = false;
+			// 
+			// Billets
+			// 
+			this.Billets.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Billets.HeaderText = "Billets";
+			this.Billets.Name = "Billets";
+			// 
+			// Count
+			// 
+			this.Count.HeaderText = "Count";
+			this.Count.Name = "Count";
 			// 
 			// buttonRef
 			// 
@@ -158,7 +183,7 @@
 			this.buttonCancel.UseVisualStyleBackColor = true;
 			this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
 			// 
-			// FormProduct
+			// FormGoods
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,8 +195,9 @@
 			this.Controls.Add(this.groupBoxComponents);
 			this.Controls.Add(this.textBoxPrice);
 			this.Controls.Add(this.textBoxName);
-			this.Name = "FormProduct";
-			this.Text = "FormProduct";
+			this.Name = "FormGoods";
+			this.Text = "FormGoods";
+			this.Load += new System.EventHandler(this.FormGoods_Load);
 			this.groupBoxComponents.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.ResumeLayout(false);
@@ -193,5 +219,8 @@
 		private System.Windows.Forms.Label labelPrice;
 		private System.Windows.Forms.Button buttonSave;
 		private System.Windows.Forms.Button buttonCancel;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Billets;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Count;
 	}
 }
