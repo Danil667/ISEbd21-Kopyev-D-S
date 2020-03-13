@@ -80,7 +80,7 @@
 			this.Controls.Add(this.buttonCancel);
 			this.Controls.Add(this.buttonSave);
 			this.Name = "FormBillets";
-			this.Text = "Form1";
+			this.Text = "заготовка";
 			this.Load += new System.EventHandler(this.FormBillets_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -50,7 +50,7 @@
 			this.buttonAdd.Name = "buttonAdd";
 			this.buttonAdd.Size = new System.Drawing.Size(75, 23);
 			this.buttonAdd.TabIndex = 1;
-			this.buttonAdd.Text = "Add";
+			this.buttonAdd.Text = "Добавть";
 			this.buttonAdd.UseVisualStyleBackColor = true;
 			this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
 			// 
@@ -60,7 +60,7 @@
 			this.buttonUpd.Name = "buttonUpd";
 			this.buttonUpd.Size = new System.Drawing.Size(75, 23);
 			this.buttonUpd.TabIndex = 2;
-			this.buttonUpd.Text = "Update";
+			this.buttonUpd.Text = "Изменить";
 			this.buttonUpd.UseVisualStyleBackColor = true;
 			this.buttonUpd.Click += new System.EventHandler(this.ButtonUpd_Click);
 			// 
@@ -70,7 +70,7 @@
 			this.buttonDel.Name = "buttonDel";
 			this.buttonDel.Size = new System.Drawing.Size(75, 23);
 			this.buttonDel.TabIndex = 3;
-			this.buttonDel.Text = "Delete";
+			this.buttonDel.Text = "Удалить";
 			this.buttonDel.UseVisualStyleBackColor = true;
 			this.buttonDel.Click += new System.EventHandler(this.ButtonDel_Click);
 			// 
@@ -80,11 +80,11 @@
 			this.buttonRef.Name = "buttonRef";
 			this.buttonRef.Size = new System.Drawing.Size(75, 23);
 			this.buttonRef.TabIndex = 4;
-			this.buttonRef.Text = "Refresh";
+			this.buttonRef.Text = "Обновить";
 			this.buttonRef.UseVisualStyleBackColor = true;
 			this.buttonRef.Click += new System.EventHandler(this.ButtonRef_Click);
 			// 
-			// FormComponents
+			// FormBilletss
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -94,8 +94,8 @@
 			this.Controls.Add(this.buttonUpd);
 			this.Controls.Add(this.buttonAdd);
 			this.Controls.Add(this.dataGridView);
-			this.Name = "FormComponents";
-			this.Text = "FormComponents";
+			this.Name = "FormBilletss";
+			this.Text = "заготовки";
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.ResumeLayout(false);
 

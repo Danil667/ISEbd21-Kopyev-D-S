@@ -196,7 +196,7 @@
 			this.Controls.Add(this.textBoxPrice);
 			this.Controls.Add(this.textBoxName);
 			this.Name = "FormGoods";
-			this.Text = "FormGoods";
+			this.Text = "товар";
 			this.Load += new System.EventHandler(this.FormGoods_Load);
 			this.groupBoxComponents.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

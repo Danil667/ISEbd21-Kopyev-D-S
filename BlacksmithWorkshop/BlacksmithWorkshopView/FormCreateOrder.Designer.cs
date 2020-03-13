@@ -62,6 +62,7 @@
 			this.textBoxCount.Name = "textBoxCount";
 			this.textBoxCount.Size = new System.Drawing.Size(121, 20);
 			this.textBoxCount.TabIndex = 2;
+			this.textBoxCount.TextChanged += new System.EventHandler(this.textBoxCount_TextChanged);
 			// 
 			// textBoxSum
 			// 
@@ -122,7 +123,7 @@
 			this.Controls.Add(this.labelProduct);
 			this.Controls.Add(this.comboBoxProduct);
 			this.Name = "FormCreateOrder";
-			this.Text = "FormCreateOrder";
+			this.Text = "Создание заказа";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
