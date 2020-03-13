@@ -64,14 +64,14 @@
 			// компонентыToolStripMenuItem
 			// 
 			this.компонентыToolStripMenuItem.Name = "компонентыToolStripMenuItem";
-			this.компонентыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.компонентыToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
 			this.компонентыToolStripMenuItem.Text = "Компоненты";
 			this.компонентыToolStripMenuItem.Click += new System.EventHandler(this.КомпонентыToolStripMenuItem_Click);
 			// 
 			// изделияToolStripMenuItem
 			// 
 			this.изделияToolStripMenuItem.Name = "изделияToolStripMenuItem";
-			this.изделияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.изделияToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
 			this.изделияToolStripMenuItem.Text = "Изделия";
 			this.изделияToolStripMenuItem.Click += new System.EventHandler(this.ИзделияToolStripMenuItem_Click);
 			// 
@@ -147,7 +147,8 @@
 			this.Controls.Add(this.menuStrip);
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "FormMain";
-			this.Text = "FormMain";
+			this.Text = "Кузнечная мастерская";
+			this.Load += new System.EventHandler(this.FormMain_Load);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

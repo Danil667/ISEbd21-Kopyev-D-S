@@ -94,7 +94,7 @@
 			this.dataGridView.Size = new System.Drawing.Size(363, 293);
 			this.dataGridView.TabIndex = 2;
 			// 
-			// FormProducts
+			// FormGoodss
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,8 +105,8 @@
 			this.Controls.Add(this.buttonAdd);
 			this.Controls.Add(this.dataGridView);
 			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.Name = "FormProducts";
-			this.Text = "Композиции";
+			this.Name = "FormGoodss";
+			this.Text = "Товары";
 			this.Load += new System.EventHandler(this.FormGoodss_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.ResumeLayout(false);
