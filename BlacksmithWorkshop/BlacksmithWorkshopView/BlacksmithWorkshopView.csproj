@@ -148,6 +148,10 @@
       <Project>{89f08eaa-3578-4f47-b534-1889df5cff2b}</Project>
       <Name>BlacksmithWorkshopBusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BlacksmithWorkshopFileImplement\BlacksmithWorkshopFileImplement.csproj">
+      <Project>{210e5c68-4dc3-45ec-890b-56626752b287}</Project>
+      <Name>BlacksmithWorkshopFileImplement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BlacksmithWorkshopListImplement\BlacksmithWorkshopListImplement.csproj">
       <Project>{62536efb-4e5c-4aef-ac85-3b71812d8fa7}</Project>
       <Name>BlacksmithWorkshopListImplement</Name>
