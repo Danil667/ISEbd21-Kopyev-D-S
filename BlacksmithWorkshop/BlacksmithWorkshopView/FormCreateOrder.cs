@@ -67,7 +67,7 @@ namespace BlacksmithWorkshopView
         {
             CalcSum();
         }
-        private void comboBoxBouquet_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxGoods_SelectedIndexChanged(object sender, EventArgs e)
         {
             CalcSum();
         }

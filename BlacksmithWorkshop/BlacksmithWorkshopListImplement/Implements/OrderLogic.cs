@@ -87,19 +87,19 @@ namespace BlacksmithWorkshopListImplement.Implements
 		}
 		private OrderViewModel CreateViewModel(Order Order)
 		{
-			string BouquetName = "";
+			string GoodsName = "";
 			for (int j = 0; j < source.Goods.Count; ++j)
 			{
 				if (source.Goods[j].Id == Order.GoodsId)
 				{
-					BouquetName = source.Goods[j].GoodsName;
+					GoodsName = source.Goods[j].GoodsName;
 					break;
 				}
 			}
 			return new OrderViewModel
 			{
 				Id = Order.Id,
-				GoodsName = BouquetName,
+				GoodsName = GoodsName,
 				Count = Order.Count,
 				Sum = Order.Sum,
 				Status = Order.Status,
