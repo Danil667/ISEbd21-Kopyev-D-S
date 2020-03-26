@@ -123,7 +123,7 @@
 			this.Controls.Add(this.labelProduct);
 			this.Controls.Add(this.comboBoxProduct);
 			this.Name = "FormCreateOrder";
-			this.Text = "Создать заказ";
+			this.Text = "Создание заказа";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

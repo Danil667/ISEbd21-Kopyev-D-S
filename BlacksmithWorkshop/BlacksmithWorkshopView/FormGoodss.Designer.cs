@@ -40,7 +40,7 @@
 			// buttonRef
 			// 
 			this.buttonRef.Location = new System.Drawing.Point(395, 171);
-			this.buttonRef.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.buttonRef.Margin = new System.Windows.Forms.Padding(2);
 			this.buttonRef.Name = "buttonRef";
 			this.buttonRef.Size = new System.Drawing.Size(115, 27);
 			this.buttonRef.TabIndex = 3;
@@ -51,7 +51,7 @@
 			// buttonDel
 			// 
 			this.buttonDel.Location = new System.Drawing.Point(395, 122);
-			this.buttonDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.buttonDel.Margin = new System.Windows.Forms.Padding(2);
 			this.buttonDel.Name = "buttonDel";
 			this.buttonDel.Size = new System.Drawing.Size(115, 27);
 			this.buttonDel.TabIndex = 4;
@@ -62,7 +62,7 @@
 			// buttonUpd
 			// 
 			this.buttonUpd.Location = new System.Drawing.Point(395, 76);
-			this.buttonUpd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.buttonUpd.Margin = new System.Windows.Forms.Padding(2);
 			this.buttonUpd.Name = "buttonUpd";
 			this.buttonUpd.Size = new System.Drawing.Size(115, 27);
 			this.buttonUpd.TabIndex = 5;
@@ -73,7 +73,7 @@
 			// buttonAdd
 			// 
 			this.buttonAdd.Location = new System.Drawing.Point(395, 30);
-			this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
 			this.buttonAdd.Name = "buttonAdd";
 			this.buttonAdd.Size = new System.Drawing.Size(115, 27);
 			this.buttonAdd.TabIndex = 6;
@@ -86,7 +86,7 @@
 			this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView.Location = new System.Drawing.Point(-1, -1);
-			this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
 			this.dataGridView.Name = "dataGridView";
 			this.dataGridView.RowHeadersVisible = false;
 			this.dataGridView.RowTemplate.Height = 28;

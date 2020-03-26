@@ -97,6 +97,7 @@
 			this.Name = "FormBilletss";
 			this.Text = "заготовки";
 			this.Load += new System.EventHandler(this.FormRaws_Load);
+
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.ResumeLayout(false);
 
