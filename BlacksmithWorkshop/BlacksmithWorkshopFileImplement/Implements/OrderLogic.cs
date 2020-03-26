@@ -75,8 +75,8 @@ namespace BlacksmithWorkshopFileImplement.Implements
 		private string GetGoodsName(int id)
 		{
 			string name = "";
-			var bouquet = source.Goodss.FirstOrDefault(x => x.Id == id);
-			name = bouquet != null ? bouquet.GoodsName : "";
+			var goods = source.Goodss.FirstOrDefault(x => x.Id == id);
+			name = goods != null ? goods.GoodsName : "";
 			return name;
 		}
 	}
