@@ -42,18 +42,18 @@ namespace BlacksmithWorkshopFileImplement.Implements
 			element.GoodsName = model.GoodsName;
 			element.Price = model.Price;
 			source.GoodsBillets.RemoveAll(rec => rec.GoodsId == model.Id &&
-		   !model.GoodsBillets.ContainsKey(rec.BilletsId));
+		   !model.GoodsBilletss.ContainsKey(rec.BilletsId));
 			var updateBilletss = source.GoodsBillets.Where(rec => rec.GoodsId ==
-		   model.Id && model.GoodsBillets.ContainsKey(rec.BilletsId));
+		   model.Id && model.GoodsBilletss.ContainsKey(rec.BilletsId));
 			foreach (var updateBillets in updateBilletss)
 			{
 				updateBillets.Count =
-			   model.GoodsBillets[updateBillets.BilletsId].Item2;
-				model.GoodsBillets.Remove(updateBillets.BilletsId);
+			   model.GoodsBilletss[updateBillets.BilletsId].Item2;
+				model.GoodsBilletss.Remove(updateBillets.BilletsId);
 			}
 			int maxPCId = source.GoodsBillets.Count > 0 ?
 		   source.GoodsBillets.Max(rec => rec.Id) : 0;
-			foreach (var pc in model.GoodsBillets)
+			foreach (var pc in model.GoodsBilletss)
 			{
 				source.GoodsBillets.Add(new GoodsBillets
 				{

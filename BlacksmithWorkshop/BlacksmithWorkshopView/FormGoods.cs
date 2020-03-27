@@ -29,7 +29,6 @@ namespace BlacksmithWorkshopView
 			InitializeComponent();
 			this.logic = service;
 		}
-
 		private void FormGoods_Load(object sender, EventArgs e)
 		{
 			if (id.HasValue)
@@ -69,8 +68,7 @@ namespace BlacksmithWorkshopView
 					dataGridView.Rows.Clear();
 					foreach (var pc in GoodsBillets)
 					{
-						dataGridView.Rows.Add(new object[] { pc.Key, pc.Value.Item1,
-pc.Value.Item2 });
+						dataGridView.Rows.Add(new object[] { pc.Key, pc.Value.Item1, pc.Value.Item2 });
 					}
 				}
 			}
@@ -80,7 +78,6 @@ pc.Value.Item2 });
 			   MessageBoxIcon.Error);
 			}
 		}
-
 		private void ButtonAdd_Click(object sender, EventArgs e)
 		{
 			var form = Container.Resolve<FormGoodsBillets>();
@@ -97,7 +94,6 @@ pc.Value.Item2 });
 				LoadData();
 			}
 		}
-
 		private void ButtonUpd_Click(object sender, EventArgs e)
 		{
 			if (dataGridView.SelectedRows.Count == 1)
@@ -113,7 +109,6 @@ pc.Value.Item2 });
 				}
 			}
 		}
-
 		private void ButtonDel_Click(object sender, EventArgs e)
 		{
 			if (dataGridView.SelectedRows.Count == 1)
@@ -135,7 +130,6 @@ pc.Value.Item2 });
 				}
 			}
 		}
-
 		private void ButtonRef_Click(object sender, EventArgs e)
 		{
 			LoadData();
@@ -168,7 +162,7 @@ pc.Value.Item2 });
 					Id = id,
 					GoodsName = textBoxName.Text,
 					Price = Convert.ToDecimal(textBoxPrice.Text),
-					GoodsBillets = GoodsBillets
+					GoodsBilletss = GoodsBillets
 				});
 				MessageBox.Show("Сохранение прошло успешно", "Сообщение",
 			   MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -181,7 +175,6 @@ pc.Value.Item2 });
 			   MessageBoxIcon.Error);
 			}
 		}
-
 		private void ButtonCancel_Click(object sender, EventArgs e)
 		{
 			DialogResult = DialogResult.Cancel;

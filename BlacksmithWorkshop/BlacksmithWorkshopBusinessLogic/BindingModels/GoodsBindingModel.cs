@@ -9,6 +9,6 @@ namespace BlacksmithWorkshopBusinessLogic.BindingModels
 		public int? Id { get; set; }
 		public string GoodsName { get; set; }
 		public decimal Price { get; set; }
-		public Dictionary<int, (string, int)> GoodsBillets { get; set; }
+		public Dictionary<int, (string, int)> GoodsBilletss { get; set; }
 	}
 }

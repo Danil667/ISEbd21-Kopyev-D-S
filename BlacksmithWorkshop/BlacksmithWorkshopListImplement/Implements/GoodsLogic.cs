@@ -81,12 +81,12 @@ namespace BlacksmithWorkshopListImplement.Implements
 				if (source.GoodsBillets[i].GoodsId == goods.Id)
 				{
 					// если в модели пришла запись компонента с таким id
-					if (model.GoodsBillets.ContainsKey(source.GoodsBillets[i].BilletsId))
+					if (model.GoodsBilletss.ContainsKey(source.GoodsBillets[i].BilletsId))
 					{
 						// обновляем количество
-						source.GoodsBillets[i].Count = model.GoodsBillets[source.GoodsBillets[i].BilletsId].Item2;
+						source.GoodsBillets[i].Count = model.GoodsBilletss[source.GoodsBillets[i].BilletsId].Item2;
 						// из модели убираем эту запись, чтобы остались только не просмотренные
-						model.GoodsBillets.Remove(source.GoodsBillets[i].BilletsId);
+						model.GoodsBilletss.Remove(source.GoodsBillets[i].BilletsId);
 					}
 					else
 					{
@@ -95,7 +95,7 @@ namespace BlacksmithWorkshopListImplement.Implements
 				}
 			}
 			// новые записи
-			foreach (var pc in model.GoodsBillets)
+			foreach (var pc in model.GoodsBilletss)
 			{
 				source.GoodsBillets.Add(new GoodsBillets
 				{
@@ -133,16 +133,16 @@ namespace BlacksmithWorkshopListImplement.Implements
 			{
 				if (pc.GoodsId == goods.Id)
 				{
-					string rawName = string.Empty;
-					foreach (var raw in source.Billets)
+					string BilletsName = string.Empty;
+					foreach (var Billets in source.Billets)
 					{
-						if (pc.BilletsId == raw.Id)
+						if (pc.BilletsId == Billets.Id)
 						{
-							rawName = raw.BilletsName;
+							BilletsName = Billets.BilletsName;
 							break;
 						}
 					}
-					goodsBillets.Add(pc.BilletsId, (rawName, pc.Count));
+					goodsBillets.Add(pc.BilletsId, (BilletsName, pc.Count));
 				}
 			}
 			return new GoodsViewModel
