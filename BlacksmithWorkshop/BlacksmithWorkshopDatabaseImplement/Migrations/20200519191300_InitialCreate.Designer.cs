@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlacksmithWorkshopDatabaseImplement.Migrations
 {
     [DbContext(typeof(BlacksmithWorkshopDatabase))]
-    [Migration("20200519183716_InitialCreate")]
+    [Migration("20200519191300_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,7 +122,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                         .IsRequired();
 
                     b.HasOne("BlacksmithWorkshopDatabaseImplement.Models.Goods", "Goods")
-                        .WithMany("GoodsBillets")
+                        .WithMany("GoodsBilletss")
                         .HasForeignKey("GoodsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

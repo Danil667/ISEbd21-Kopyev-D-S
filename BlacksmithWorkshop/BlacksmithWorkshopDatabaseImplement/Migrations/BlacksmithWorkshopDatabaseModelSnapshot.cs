@@ -26,7 +26,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ComponentName")
+                    b.Property<string>("BilletsName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -76,7 +76,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
 
                     b.HasIndex("GoodsId");
 
-                    b.ToTable("GoodsBillets");
+                    b.ToTable("GoodsBilletss");
                 });
 
             modelBuilder.Entity("BlacksmithWorkshopDatabaseImplement.Models.Order", b =>
@@ -114,13 +114,13 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
             modelBuilder.Entity("BlacksmithWorkshopDatabaseImplement.Models.GoodsBillets", b =>
                 {
                     b.HasOne("BlacksmithWorkshopDatabaseImplement.Models.Billets", "Billets")
-                        .WithMany("GoodsBillets")
+                        .WithMany("GoodsBilletss")
                         .HasForeignKey("BilletsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BlacksmithWorkshopDatabaseImplement.Models.Goods", "Goods")
-                        .WithMany("GoodsBillets")
+                        .WithMany("GoodsBilletss")
                         .HasForeignKey("GoodsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -129,7 +129,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
             modelBuilder.Entity("BlacksmithWorkshopDatabaseImplement.Models.Order", b =>
                 {
                     b.HasOne("BlacksmithWorkshopDatabaseImplement.Models.Goods", "Goods")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("GoodsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

@@ -13,7 +13,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Models
 		public string GoodsName { get; set; }
 		[Required]
 		public decimal Price { get; set; }
-		public virtual List<GoodsBillets> GoodsBillets { get; set; }
+		public virtual List<GoodsBillets> GoodsBilletss { get; set; }
 		public virtual List<Order> Orders { get; set; }
 	}
 }

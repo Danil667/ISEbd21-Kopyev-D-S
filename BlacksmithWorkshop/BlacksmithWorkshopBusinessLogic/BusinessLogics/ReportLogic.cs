@@ -31,13 +31,13 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 			var list = new List<ReportGoodsBilletsViewModel>();
 			foreach (var goods in goodss)
 			{
-				foreach (var sf in goods.GoodsBilletss)
+				foreach (var gb in goods.GoodsBilletss)
 				{
 					var record = new ReportGoodsBilletsViewModel
 					{
 						GoodsName = goods.GoodsName,
-						BilletsName = sf.Value.Item1,
-						Count = sf.Value.Item2
+						BilletsName = gb.Value.Item1,
+						Count = gb.Value.Item2
 					};
 					list.Add(record);
 				}
@@ -49,18 +49,19 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 		/// </summary>
 		/// <param name="model"></param>
 		/// <returns></returns>
-		public List<ReportOrdersViewModel> GetOrders(ReportBindingModel model)
+		public List<IGrouping<DateTime, OrderViewModel>> GetOrders(ReportBindingModel model)
 		{
-			return orderLogic.Read(new OrderBindingModel { DateFrom = model.DateFrom, DateTo = model.DateTo })
-			.Select(x => new ReportOrdersViewModel
+			var list = orderLogic
+			.Read(new OrderBindingModel
 			{
-				DateCreate = x.DateCreate,
-				GoodsName = x.GoodsName,
-				Count = x.Count,
-				Sum = x.Sum,
-				Status = x.Status
+				DateFrom = model.DateFrom,
+				DateTo = model.DateTo
 			})
+			.GroupBy(rec => rec.DateCreate.Date)
+			.OrderBy(recG => recG.Key)
 			.ToList();
+
+			return list;
 		}
 		/// <summary>
 		/// Сохранение компонент в файл-Word
@@ -83,8 +84,6 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 		{
 			SaveToExcel.CreateDoc(new ExcelInfo
 			{
-				DateFrom = model.DateFrom.Value,
-				DateTo = model.DateTo.Value,
 				FileName = model.FileName,
 				Title = "Список заказов",
 				Orders = GetOrders(model)

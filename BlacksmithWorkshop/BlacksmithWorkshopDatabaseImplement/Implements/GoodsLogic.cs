@@ -120,18 +120,18 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 				return context.Goodss
 				.Where(rec => model == null || rec.Id == model.Id)
 				.ToList()
-				.Select(rec => new GoodsViewModel
-				{
-					Id = rec.Id,
-					GoodsName = rec.GoodsName,
-					Price = rec.Price,
-					GoodsBilletss = context.GoodsBilletss
-				.Include(recPC => recPC.Billets)
-				.Where(recPC => recPC.BilletsId == rec.Id)
-				.ToDictionary(recPC => recPC.BilletsId, recPC =>
-				(recPC.Billets?.BilletsName, recPC.Count))
-				})
-				.ToList();
+			   .Select(rec => new GoodsViewModel
+			   {
+				   Id = rec.Id,
+				   GoodsName = rec.GoodsName,
+				   Price = rec.Price,
+				   GoodsBilletss = context.GoodsBilletss
+				.Include(recPC => recPC.Goods)
+			   .Where(recPC => recPC.GoodsId == rec.Id)
+			   .ToDictionary(recPC => recPC.GoodsId, recPC =>
+				(recPC.Goods?.GoodsName, recPC.Count))
+			   })
+			   .ToList();
 			}
 		}
 	}
