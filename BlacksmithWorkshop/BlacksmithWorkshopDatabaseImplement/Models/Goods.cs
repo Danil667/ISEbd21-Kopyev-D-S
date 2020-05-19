@@ -11,10 +11,9 @@ namespace BlacksmithWorkshopDatabaseImplement.Models
 		public int Id { get; set; }
 		[Required]
 		public string GoodsName { get; set; }
-		[ForeignKey("GoodsId")]
 		[Required]
 		public decimal Price { get; set; }
-		public virtual List<GoodsBillets> GoodsBilletss { get; set; }
+		public virtual List<GoodsBillets> GoodsBillets { get; set; }
 		public virtual List<Order> Orders { get; set; }
 	}
 }

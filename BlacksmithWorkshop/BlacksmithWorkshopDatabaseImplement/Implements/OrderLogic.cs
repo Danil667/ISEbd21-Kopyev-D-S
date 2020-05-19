@@ -62,12 +62,12 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 		{
 			using (var context = new BlacksmithWorkshopDatabase())
 			{
-				return context.Orders
-				.Include(rec => rec.Goods)
-			.Where(rec => model == null || rec.Id == model.Id)
-			.Select(rec => new OrderViewModel
-			{
+				return context.Orders.Where(rec => model == null || (rec.Id == model.Id && model.Id.HasValue)
+				|| (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo))
+				.Select(rec => new OrderViewModel
+				{
 				Id = rec.Id,
+				GoodsID = rec.GoodsId,
 				GoodsName = rec.Goods.GoodsName,
 				Count = rec.Count,
 				Sum = rec.Sum,

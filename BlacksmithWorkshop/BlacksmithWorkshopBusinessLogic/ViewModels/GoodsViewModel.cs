@@ -12,6 +12,6 @@ namespace BlacksmithWorkshopBusinessLogic.ViewModels
 		public string GoodsName { get; set; }
 		[DisplayName("Цена")]
 		public decimal Price { get; set; }
-		public Dictionary<int, (string, int)> GoodsBillets { get; set; }
+		public Dictionary<int, (string, int)> GoodsBilletss { get; set; }
 	}
 }

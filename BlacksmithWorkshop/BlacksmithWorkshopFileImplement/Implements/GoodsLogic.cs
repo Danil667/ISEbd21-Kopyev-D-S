@@ -86,7 +86,7 @@ namespace BlacksmithWorkshopFileImplement.Implements
 				Id = rec.Id,
 				GoodsName = rec.GoodsName,
 				Price = rec.Price,
-				GoodsBillets = source.GoodsBillets
+				GoodsBilletss = source.GoodsBillets
 			.Where(recPC => recPC.GoodsId == rec.Id)
 		   .ToDictionary(recPC => recPC.BilletsId, recPC =>
 			(source.Billetss.FirstOrDefault(recC => recC.Id ==

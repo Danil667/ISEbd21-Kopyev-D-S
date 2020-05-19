@@ -125,7 +125,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 					Id = rec.Id,
 					GoodsName = rec.GoodsName,
 					Price = rec.Price,
-					GoodsBillets = context.GoodsBilletss
+					GoodsBilletss = context.GoodsBilletss
 				.Include(recPC => recPC.Billets)
 				.Where(recPC => recPC.BilletsId == rec.Id)
 				.ToDictionary(recPC => recPC.BilletsId, recPC =>

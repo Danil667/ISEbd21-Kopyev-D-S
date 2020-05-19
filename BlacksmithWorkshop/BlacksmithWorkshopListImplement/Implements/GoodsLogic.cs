@@ -150,7 +150,7 @@ namespace BlacksmithWorkshopListImplement.Implements
 				Id = goods.Id,
 				GoodsName = goods.GoodsName,
 				Price = goods.Price,
-				GoodsBillets = goodsBillets
+				GoodsBilletss = goodsBillets
 			};
 		}
 	}

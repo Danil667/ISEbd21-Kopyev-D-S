@@ -43,7 +43,7 @@ namespace BlacksmithWorkshopView
 					{
 						textBoxName.Text = view.GoodsName;
 						textBoxPrice.Text = view.Price.ToString();
-						GoodsBillets = view.GoodsBillets;
+						GoodsBillets = view.GoodsBilletss;
 						LoadData();
 					}
 				}
