@@ -8,6 +8,7 @@ namespace BlacksmithWorkshopBusinessLogic.BindingModels
 	public class OrderBindingModel
 	{
 		public int? Id { get; set; }
+		public int? ClientId { get; set; }
 		public int GoodsId { get; set; }
 		public int Count { get; set; }
 		public decimal Sum { get; set; }

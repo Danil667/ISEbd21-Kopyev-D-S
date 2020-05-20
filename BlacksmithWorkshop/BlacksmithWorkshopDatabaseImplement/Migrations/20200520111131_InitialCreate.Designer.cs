@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlacksmithWorkshopDatabaseImplement.Migrations
 {
     [DbContext(typeof(BlacksmithWorkshopDatabase))]
-    [Migration("20200519191300_InitialCreate")]
+    [Migration("20200520111131_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,30 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Billetss");
+                });
+
+            modelBuilder.Entity("BlacksmithWorkshopDatabaseImplement.Models.Client", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClientFIO")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("BlacksmithWorkshopDatabaseImplement.Models.Goods", b =>
@@ -88,6 +112,9 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
@@ -107,6 +134,8 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
 
                     b.HasIndex("GoodsId");
 
@@ -130,6 +159,12 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
 
             modelBuilder.Entity("BlacksmithWorkshopDatabaseImplement.Models.Order", b =>
                 {
+                    b.HasOne("BlacksmithWorkshopDatabaseImplement.Models.Client", "Client")
+                        .WithMany("Orders")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BlacksmithWorkshopDatabaseImplement.Models.Goods", "Goods")
                         .WithMany("Orders")
                         .HasForeignKey("GoodsId")
