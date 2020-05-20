@@ -28,14 +28,14 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 					{
 						Bold = true,
 						Size = "24",
-						JustificationValues = JustificationValues.Center                      
+						JustificationValues = JustificationValues.Center
 					}
 				}));
-				foreach (var goods in info.Goodss)
+				foreach (var Goods in info.Goodss)
 				{
 					docBody.AppendChild(CreateParagraph(new WordParagraph
 					{
-						Texts = new List<string> { goods.GoodsName ,": " + goods.Price.ToString() },
+						Texts = new List<string> { Goods.GoodsName, ":" + Goods.Price.ToString() },
 						TextProperties = new WordParagraphProperties
 						{
 							Size = "24",
@@ -48,25 +48,13 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 				wordDocument.MainDocumentPart.Document.Save();
 			}
 		}
-		/// <summary>
-		/// Настройки страницы
-		/// </summary>
-		/// <returns></returns>
 		private static SectionProperties CreateSectionProperties()
 		{
 			SectionProperties properties = new SectionProperties();
-			PageSize pageSize = new PageSize
-			{
-				Orient = PageOrientationValues.Portrait
-			};
+			PageSize pageSize = new PageSize { Orient = PageOrientationValues.Portrait };
 			properties.AppendChild(pageSize);
 			return properties;
 		}
-		/// <summary>
-		/// Создание абзаца с текстом
-		/// </summary>
-		/// <param name="paragraph"></param>
-		/// <returns></returns>
 		private static Paragraph CreateParagraph(WordParagraph paragraph)
 		{
 			if (paragraph != null)
@@ -78,7 +66,7 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 					Run docRun = new Run();
 					RunProperties properties = new RunProperties();
 					properties.AppendChild(new FontSize { Val = paragraph.TextProperties.Size });
-					if (paragraph.TextProperties.Bold)
+					if (!run.StartsWith(":") && paragraph.TextProperties.Bold)
 					{
 						properties.AppendChild(new Bold());
 					}
@@ -90,24 +78,13 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 			}
 			return null;
 		}
-		/// <summary>
-		/// Задание форматирования для абзаца
-		/// </summary>
-		/// <param name="paragraphProperties"></param>
-		/// <returns></returns>
 		private static ParagraphProperties CreateParagraphProperties(WordParagraphProperties paragraphProperties)
 		{
 			if (paragraphProperties != null)
 			{
 				ParagraphProperties properties = new ParagraphProperties();
-				properties.AppendChild(new Justification()
-				{
-					Val = paragraphProperties.JustificationValues
-				});
-				properties.AppendChild(new SpacingBetweenLines
-				{
-					LineRule = LineSpacingRuleValues.Auto
-				});
+				properties.AppendChild(new Justification() { Val = paragraphProperties.JustificationValues });
+				properties.AppendChild(new SpacingBetweenLines { LineRule = LineSpacingRuleValues.Auto });
 				properties.AppendChild(new Indentation());
 				ParagraphMarkRunProperties paragraphMarkRunProperties = new ParagraphMarkRunProperties();
 				if (!string.IsNullOrEmpty(paragraphProperties.Size))
