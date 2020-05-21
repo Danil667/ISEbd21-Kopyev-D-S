@@ -49,11 +49,11 @@ namespace BlacksmithWorkshopListImplement.Implements
 		public void Delete(GoodsBindingModel model)
 		{
 			// удаляем записи по компонентам при удалении изделия
-			for (int i = 0; i < source.GoodsBillets.Count; ++i)
+			for (int i = 0; i < source.GoodsBilletss.Count; ++i)
 			{
-				if (source.GoodsBillets[i].GoodsId == model.Id)
+				if (source.GoodsBilletss[i].GoodsId == model.Id)
 				{
-					source.GoodsBillets.RemoveAt(i--);
+					source.GoodsBilletss.RemoveAt(i--);
 				}
 			}
 			for (int i = 0; i < source.Goods.Count; ++i)
@@ -72,32 +72,32 @@ namespace BlacksmithWorkshopListImplement.Implements
 			goods.Price = model.Price;
 			//обновляем существуюущие компоненты и ищем максимальный идентификатор
 			int maxPCId = 0;
-			for (int i = 0; i < source.GoodsBillets.Count; ++i)
+			for (int i = 0; i < source.GoodsBilletss.Count; ++i)
 			{
-				if (source.GoodsBillets[i].Id > maxPCId)
+				if (source.GoodsBilletss[i].Id > maxPCId)
 				{
-					maxPCId = source.GoodsBillets[i].Id;
+					maxPCId = source.GoodsBilletss[i].Id;
 				}
-				if (source.GoodsBillets[i].GoodsId == goods.Id)
+				if (source.GoodsBilletss[i].GoodsId == goods.Id)
 				{
 					// если в модели пришла запись компонента с таким id
-					if (model.GoodsBilletss.ContainsKey(source.GoodsBillets[i].BilletsId))
+					if (model.GoodsBilletss.ContainsKey(source.GoodsBilletss[i].BilletsId))
 					{
 						// обновляем количество
-						source.GoodsBillets[i].Count = model.GoodsBilletss[source.GoodsBillets[i].BilletsId].Item2;
+						source.GoodsBilletss[i].Count = model.GoodsBilletss[source.GoodsBilletss[i].BilletsId].Item2;
 						// из модели убираем эту запись, чтобы остались только не просмотренные
-						model.GoodsBilletss.Remove(source.GoodsBillets[i].BilletsId);
+						model.GoodsBilletss.Remove(source.GoodsBilletss[i].BilletsId);
 					}
 					else
 					{
-						source.GoodsBillets.RemoveAt(i--);
+						source.GoodsBilletss.RemoveAt(i--);
 					}
 				}
 			}
 			// новые записи
 			foreach (var pc in model.GoodsBilletss)
 			{
-				source.GoodsBillets.Add(new GoodsBillets
+				source.GoodsBilletss.Add(new GoodsBillets
 				{
 					Id = ++maxPCId,
 					GoodsId = goods.Id,
@@ -129,7 +129,7 @@ namespace BlacksmithWorkshopListImplement.Implements
 		{
 			Dictionary<int, (string, int)> goodsBillets = new Dictionary<int,
 	(string, int)>();
-			foreach (var pc in source.GoodsBillets)
+			foreach (var pc in source.GoodsBilletss)
 			{
 				if (pc.GoodsId == goods.Id)
 				{

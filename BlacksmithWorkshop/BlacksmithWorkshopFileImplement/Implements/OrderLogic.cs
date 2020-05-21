@@ -36,6 +36,7 @@ namespace BlacksmithWorkshopFileImplement.Implements
 				source.Orders.Add(element);
 			}
 			element.GoodsId = model.GoodsId == 0 ? element.GoodsId : model.GoodsId;
+			element.ClientId = model.ClientId == null ? element.ClientId : (int)model.ClientId;
 			element.Count = model.Count;
 			element.Sum = model.Sum;
 			element.Status = model.Status;
@@ -58,11 +59,14 @@ namespace BlacksmithWorkshopFileImplement.Implements
 		public List<OrderViewModel> Read(OrderBindingModel model)
 		{
 			return source.Orders
-			.Where(rec => model == null || rec.Id == model.Id)
+			.Where(rec => model == null || rec.Id == model.Id || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)
+			|| model.ClientId.HasValue && rec.ClientId == model.ClientId)
 			.Select(rec => new OrderViewModel
 			{
 				Id = rec.Id,
 				GoodsName = GetGoodsName(rec.GoodsId),
+				ClientId = rec.ClientId,
+				ClientFIO = source.Clients.FirstOrDefault(recC => recC.Id == rec.ClientId)?.ClientFIO,
 				Count = rec.Count,
 				Sum = rec.Sum,
 				Status = rec.Status,

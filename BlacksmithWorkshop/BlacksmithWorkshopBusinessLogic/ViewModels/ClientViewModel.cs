@@ -7,17 +7,18 @@ using System.Text;
 namespace BlacksmithWorkshopBusinessLogic.ViewModels
 {
 	[DataContract]
-	public class GoodsViewModel
+	public class ClientViewModel
 	{
 		[DataMember]
 		public int Id { get; set; }
 		[DataMember]
-		[DisplayName("Название изделия")]
-		public string GoodsName { get; set; }
+		[DisplayName("ФИО")]
+		public string ClientFIO { get; set; }
 		[DataMember]
-		[DisplayName("Цена")]
-		public decimal Price { get; set; }
+		[DisplayName("Логин")]
+		public string Email { get; set; }
 		[DataMember]
-		public Dictionary<int, (string, int)> GoodsBilletss { get; set; }
+		[DisplayName("Пароль")]
+		public string Password { get; set; }
 	}
 }

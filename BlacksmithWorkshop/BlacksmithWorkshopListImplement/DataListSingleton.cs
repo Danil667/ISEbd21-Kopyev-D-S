@@ -13,13 +13,15 @@ namespace BlacksmithWorkshopListImplement
 		public List<Billets> Billets { get; set; }
 		public List<Order> Orders { get; set; }
 		public List<Goods> Goods { get; set; }
-		public List<GoodsBillets> GoodsBillets { get; set; }
+		public List<GoodsBillets> GoodsBilletss { get; set; }
+		public List<Client> Clients { get; set; }
 		private DataListSingleton()
 		{
 			Billets = new List<Billets>();
 			Orders = new List<Order>();
 			Goods = new List<Goods>();
-			GoodsBillets = new List<GoodsBillets>();
+			GoodsBilletss = new List<GoodsBillets>();
+			Clients = new List<Client>();
 		}
 		public static DataListSingleton GetInstance()
 		{
@@ -28,6 +30,6 @@ namespace BlacksmithWorkshopListImplement
 				instance = new DataListSingleton();
 			}
 			return instance;
-		}	
+		}
 	}
 }

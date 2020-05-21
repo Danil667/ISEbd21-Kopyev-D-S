@@ -9,6 +9,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Models
 	public class Order
 	{
 		public int Id { get; set; }
+		public int ClientId { get; set; }
 		public int GoodsId { get; set; }
 		[Required]
 		public int Count { get; set; }
@@ -20,5 +21,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Models
 		public DateTime DateCreate { get; set; }
 		public DateTime? DateImplement { get; set; }
 		public virtual Goods Goods { get; set; }
+		public Client Client { get; set; }
 	}
 }
