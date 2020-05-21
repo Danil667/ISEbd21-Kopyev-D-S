@@ -21,21 +21,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Clients",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ClientFIO = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false),
-                    Password = table.Column<string>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Clients", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Goodss",
                 columns: table => new
                 {
@@ -82,7 +67,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ClientId = table.Column<int>(nullable: false),
                     GoodsId = table.Column<int>(nullable: false),
                     Count = table.Column<int>(nullable: false),
                     Sum = table.Column<decimal>(nullable: false),
@@ -93,12 +77,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Orders_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Orders_Goodss_GoodsId",
                         column: x => x.GoodsId,
@@ -118,11 +96,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                 column: "GoodsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_ClientId",
-                table: "Orders",
-                column: "ClientId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Orders_GoodsId",
                 table: "Orders",
                 column: "GoodsId");
@@ -138,9 +111,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
 
             migrationBuilder.DropTable(
                 name: "Billetss");
-
-            migrationBuilder.DropTable(
-                name: "Clients");
 
             migrationBuilder.DropTable(
                 name: "Goodss");

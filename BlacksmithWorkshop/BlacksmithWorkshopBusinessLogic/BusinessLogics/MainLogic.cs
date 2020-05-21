@@ -19,7 +19,6 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 			orderLogic.CreateOrUpdate(new OrderBindingModel
 			{
 				GoodsId = model.GoodsId,
-				ClientId = model.ClientId,
 				Count = model.Count,
 				Sum = model.Sum,
 				DateCreate = DateTime.Now,
@@ -40,7 +39,6 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 			orderLogic.CreateOrUpdate(new OrderBindingModel
 			{
 				Id = order.Id,
-				ClientId = order.ClientId,
 				GoodsId = order.GoodsID,
 				Count = order.Count,
 				Sum = order.Sum,
@@ -64,7 +62,6 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 			orderLogic.CreateOrUpdate(new OrderBindingModel
 			{
 				Id = order.Id,
-				ClientId = order.ClientId,
 				GoodsId = order.GoodsID,
 				Count = order.Count,
 				Sum = order.Sum,
@@ -87,7 +84,6 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 			orderLogic.CreateOrUpdate(new OrderBindingModel
 			{
 				Id = order.Id,
-				ClientId = order.ClientId,
 				GoodsId = order.GoodsID,
 				Count = order.Count,
 				Sum = order.Sum,

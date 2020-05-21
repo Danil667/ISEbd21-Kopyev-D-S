@@ -60,39 +60,37 @@ namespace BlacksmithWorkshopListImplement.Implements
 		public List<OrderViewModel> Read(OrderBindingModel model)
 		{
 			List<OrderViewModel> result = new List<OrderViewModel>();
-			foreach (var order in source.Orders)
+			foreach (var Order in source.Orders)
 			{
 				if (model != null)
 				{
-					if (order.Id == model.Id || (model.DateFrom.HasValue && model.DateTo.HasValue && order.DateCreate >= model.DateFrom && order.DateCreate <= model.DateTo)
-	|| model.ClientId.HasValue && order.ClientId == model.ClientId)
+					if (Order.Id == model.Id)
 					{
-						result.Add(CreateViewModel(order));
+						result.Add(CreateViewModel(Order));
 						break;
 					}
 					continue;
 				}
-				result.Add(CreateViewModel(order));
+				result.Add(CreateViewModel(Order));
 			}
 			return result;
 		}
-		private Order CreateModel(OrderBindingModel model, Order order)
+		private Order CreateModel(OrderBindingModel model, Order Order)
 		{
-			order.GoodsId = model.GoodsId == 0 ? order.GoodsId : model.GoodsId;
-			order.ClientId = (int)model.ClientId;
-			order.Count = model.Count;
-			order.Sum = model.Sum;
-			order.Status = model.Status;
-			order.DateCreate = model.DateCreate;
-			order.DateImplement = model.DateImplement;
-			return order;
+			Order.GoodsId = model.GoodsId == 0 ? Order.GoodsId : model.GoodsId;
+			Order.Count = model.Count;
+			Order.Sum = model.Sum;
+			Order.Status = model.Status;
+			Order.DateCreate = model.DateCreate;
+			Order.DateImplement = model.DateImplement;
+			return Order;
 		}
-		private OrderViewModel CreateViewModel(Order order)
+		private OrderViewModel CreateViewModel(Order Order)
 		{
 			string GoodsName = "";
 			for (int j = 0; j < source.Goods.Count; ++j)
 			{
-				if (source.Goods[j].Id == order.GoodsId)
+				if (source.Goods[j].Id == Order.GoodsId)
 				{
 					GoodsName = source.Goods[j].GoodsName;
 					break;
@@ -100,14 +98,13 @@ namespace BlacksmithWorkshopListImplement.Implements
 			}
 			return new OrderViewModel
 			{
-				Id = order.Id,
+				Id = Order.Id,
 				GoodsName = GoodsName,
-				ClientId = order.ClientId,
-				Count = order.Count,
-				Sum = order.Sum,
-				Status = order.Status,
-				DateCreate = order.DateCreate,
-				DateImplement = order.DateImplement
+				Count = Order.Count,
+				Sum = Order.Sum,
+				Status = Order.Status,
+				DateCreate = Order.DateCreate,
+				DateImplement = Order.DateImplement
 			};
 		}
 	}

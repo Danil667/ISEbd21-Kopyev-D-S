@@ -13,15 +13,13 @@ namespace BlacksmithWorkshopListImplement
 		public List<Billets> Billets { get; set; }
 		public List<Order> Orders { get; set; }
 		public List<Goods> Goods { get; set; }
-		public List<GoodsBillets> GoodsBilletss { get; set; }
-		public List<Client> Clients { get; set; }
+		public List<GoodsBillets> GoodsBillets { get; set; }
 		private DataListSingleton()
 		{
 			Billets = new List<Billets>();
 			Orders = new List<Order>();
 			Goods = new List<Goods>();
-			GoodsBilletss = new List<GoodsBillets>();
-			Clients = new List<Client>();
+			GoodsBillets = new List<GoodsBillets>();
 		}
 		public static DataListSingleton GetInstance()
 		{

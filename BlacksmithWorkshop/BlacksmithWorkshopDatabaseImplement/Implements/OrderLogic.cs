@@ -32,7 +32,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 					context.Orders.Add(element);
 				}
 				element.GoodsId = model.GoodsId == 0 ? element.GoodsId : model.GoodsId;
-				element.ClientId = model.ClientId == null ? element.ClientId : (int)model.ClientId;
 				element.Count = model.Count;
 				element.Sum = model.Sum;
 				element.Status = model.Status;
@@ -63,23 +62,19 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 		{
 			using (var context = new BlacksmithWorkshopDatabase())
 			{
-				return context.Orders.Where(rec => model == null || (rec.Id == model.Id && model.Id.HasValue) || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo) ||
-				(model.ClientId.HasValue && rec.ClientId == model.ClientId))
-				  .Include(rec => rec.Goods)
-				.Include(rec => rec.Client)
-			   .Select(rec => new OrderViewModel
+				return context.Orders.Where(rec => model == null || (rec.Id == model.Id && model.Id.HasValue)
+				|| (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo))
+				.Select(rec => new OrderViewModel
 				{
-				   Id = rec.Id,
-				   ClientId = rec.ClientId,
-				   GoodsID = rec.GoodsId,
+				Id = rec.Id,
+				GoodsID = rec.GoodsId,
 				GoodsName = rec.Goods.GoodsName,
 				Count = rec.Count,
 				Sum = rec.Sum,
 				Status = rec.Status,
 				DateCreate = rec.DateCreate,
-				DateImplement = rec.DateImplement,
-				   ClientFIO = rec.Client.ClientFIO
-			   })
+				DateImplement = rec.DateImplement
+			})
 			.ToList();
 			}
 		}

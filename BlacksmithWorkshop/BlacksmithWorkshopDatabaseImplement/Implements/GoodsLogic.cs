@@ -126,10 +126,10 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 				   GoodsName = rec.GoodsName,
 				   Price = rec.Price,
 				   GoodsBilletss = context.GoodsBilletss
-				.Include(recPC => recPC.Billets)
+				.Include(recPC => recPC.Goods)
 			   .Where(recPC => recPC.GoodsId == rec.Id)
-			   .ToDictionary(recPC => recPC.BilletsId, recPC =>
-				(recPC.Billets?.BilletsName, recPC.Count))
+			   .ToDictionary(recPC => recPC.GoodsId, recPC =>
+				(recPC.Goods?.GoodsName, recPC.Count))
 			   })
 			   .ToList();
 			}
