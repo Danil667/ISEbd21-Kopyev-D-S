@@ -1,4 +1,5 @@
 ﻿using BlacksmithWorkshopBusinessLogic.BindingModels;
+using BlacksmithWorkshopBusinessLogic.Enums;
 using BlacksmithWorkshopBusinessLogic.Interfaces;
 using BlacksmithWorkshopBusinessLogic.ViewModels;
 using BlacksmithWorkshopListImplement.Models;
@@ -65,7 +66,9 @@ namespace BlacksmithWorkshopListImplement.Implements
 				if (model != null)
 				{
 					if (order.Id == model.Id || (model.DateFrom.HasValue && model.DateTo.HasValue && order.DateCreate >= model.DateFrom && order.DateCreate <= model.DateTo)
-	|| model.ClientId.HasValue && order.ClientId == model.ClientId)
+	 || model.ClientId.HasValue && order.ClientId == model.ClientId
+						|| model.FreeOrders.HasValue && model.FreeOrders.Value
+					|| model.ImplementerId.HasValue && order.ImplementerId == model.ImplementerId && order.Status == OrderStatus.Выполняется)
 					{
 						result.Add(CreateViewModel(order));
 						break;
@@ -81,6 +84,7 @@ namespace BlacksmithWorkshopListImplement.Implements
 			order.GoodsId = model.GoodsId == 0 ? order.GoodsId : model.GoodsId;
 			order.ClientId = (int)model.ClientId;
 			order.Count = model.Count;
+			order.ImplementerId = model.ImplementerId;
 			order.Sum = model.Sum;
 			order.Status = model.Status;
 			order.DateCreate = model.DateCreate;
