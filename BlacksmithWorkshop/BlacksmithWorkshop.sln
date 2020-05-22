@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlacksmithWorkshopFileImple
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlacksmithWorkshopDatabaseImplement", "BlacksmithWorkshopDatabaseImplement\BlacksmithWorkshopDatabaseImplement.csproj", "{3CF32DCB-048B-4885-A5CC-8142CC38B355}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlacksmithWorkshopRestApi", "BlacksmithWorkshopRestApi\BlacksmithWorkshopRestApi.csproj", "{46864418-3957-48DD-8577-921E52A1716C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlacksmithWorkshopClientView", "BlacksmithWorkshopClientView\BlacksmithWorkshopClientView.csproj", "{064E8911-F631-4714-AEDC-2D6F22CD6919}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{3CF32DCB-048B-4885-A5CC-8142CC38B355}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CF32DCB-048B-4885-A5CC-8142CC38B355}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CF32DCB-048B-4885-A5CC-8142CC38B355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46864418-3957-48DD-8577-921E52A1716C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46864418-3957-48DD-8577-921E52A1716C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46864418-3957-48DD-8577-921E52A1716C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46864418-3957-48DD-8577-921E52A1716C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064E8911-F631-4714-AEDC-2D6F22CD6919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064E8911-F631-4714-AEDC-2D6F22CD6919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064E8911-F631-4714-AEDC-2D6F22CD6919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064E8911-F631-4714-AEDC-2D6F22CD6919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
