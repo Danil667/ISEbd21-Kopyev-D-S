@@ -12,6 +12,8 @@ namespace BlacksmithWorkshopDatabaseImplement.Models
 		public int ClientId { get; set; }
 		public int GoodsId { get; set; }
 		[Required]
+
+		public int? ImplementerId { get; set; }
 		public int Count { get; set; }
 		[Required]
 		public decimal Sum { get; set; }
@@ -22,5 +24,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Models
 		public DateTime? DateImplement { get; set; }
 		public virtual Goods Goods { get; set; }
 		public Client Client { get; set; }
+		public Implementer Implementer { get; set; }
 	}
 }

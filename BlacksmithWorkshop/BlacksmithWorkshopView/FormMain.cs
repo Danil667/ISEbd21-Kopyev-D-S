@@ -20,12 +20,14 @@ namespace BlacksmithWorkshopView
 		public new IUnityContainer Container { get; set; }
 		private readonly MainLogic logic;
 		private readonly IOrderLogic orderLogic;
+		private readonly WorkModeling work;
 		private readonly ReportLogic report;
 		public FormMain(MainLogic logic, IOrderLogic orderLogic, WorkModeling work, ReportLogic report) 
 		{ 
 			InitializeComponent();
 			this.logic = logic;
 			this.orderLogic = orderLogic;
+			this.work = work;
 			this.report = report;
 		}
 		private void FormMain_Load(object sender, EventArgs e)

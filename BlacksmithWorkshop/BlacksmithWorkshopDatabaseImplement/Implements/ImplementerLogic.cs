@@ -1,6 +1,7 @@
 ﻿using BlacksmithWorkshopBusinessLogic.BindingModels;
 using BlacksmithWorkshopBusinessLogic.Interfaces;
 using BlacksmithWorkshopBusinessLogic.ViewModels;
+using BlacksmithWorkshopDatabaseImplement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

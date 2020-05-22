@@ -1,4 +1,5 @@
 ﻿using BlacksmithWorkshopBusinessLogic.BindingModels;
+using BlacksmithWorkshopBusinessLogic.Enums;
 using BlacksmithWorkshopBusinessLogic.Interfaces;
 using BlacksmithWorkshopBusinessLogic.ViewModels;
 using BlacksmithWorkshopDatabaseImplement.Models;
