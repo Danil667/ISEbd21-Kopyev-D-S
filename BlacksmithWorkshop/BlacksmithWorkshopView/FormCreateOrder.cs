@@ -17,15 +17,17 @@ namespace BlacksmithWorkshopView
 {
 	public partial class FormCreateOrder : Form
 	{
-		 [Dependency]
+		[Dependency]
         public new IUnityContainer Container { get; set; }
         private readonly IGoodsLogic logicB;
-        private readonly MainLogic logicM;
-        public FormCreateOrder(IGoodsLogic logicB, MainLogic logicM)
+		private readonly IClientLogic logicC;
+		private readonly MainLogic logicM;
+        public FormCreateOrder(IGoodsLogic logicB, IClientLogic logicC, MainLogic logicM)
         {
             InitializeComponent();
             this.logicB = logicB;
-            this.logicM = logicM;
+			this.logicC = logicC;
+			this.logicM = logicM;
         }
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
@@ -35,7 +37,12 @@ namespace BlacksmithWorkshopView
                 comboBoxProduct.DataSource = list;
 				comboBoxProduct.DisplayMember = "BilletsName";
 				comboBoxProduct.ValueMember = "Id";
-            }
+				var listC = logicC.Read(null);
+				comboBoxClient.DisplayMember = "ClientFIO";
+				comboBoxClient.ValueMember = "Id";
+				comboBoxClient.DataSource = listC;
+				comboBoxClient.SelectedItem = null;
+			}
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
@@ -90,7 +97,8 @@ namespace BlacksmithWorkshopView
                 logicM.CreateOrder(new CreateOrderBindingModel
                 {
                     GoodsId = Convert.ToInt32(comboBoxProduct.SelectedValue),
-                    Count = Convert.ToInt32(textBoxCount.Text),
+					ClientId = Convert.ToInt32(comboBoxClient.SelectedValue),
+					Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)
                 });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
