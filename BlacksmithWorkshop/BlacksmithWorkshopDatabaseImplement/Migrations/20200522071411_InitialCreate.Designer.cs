@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlacksmithWorkshopDatabaseImplement.Migrations
 {
     [DbContext(typeof(BlacksmithWorkshopDatabase))]
-    [Migration("20200521121530_InitialCreate")]
+    [Migration("20200522071411_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,6 +105,27 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                     b.ToTable("GoodsBilletss");
                 });
 
+            modelBuilder.Entity("BlacksmithWorkshopDatabaseImplement.Models.Implementer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImplementerFIO")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PauseTime")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WorkingTime")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Implementers");
+                });
+
             modelBuilder.Entity("BlacksmithWorkshopDatabaseImplement.Models.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -127,6 +148,10 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                     b.Property<int>("GoodsId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ImplementerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -138,6 +163,8 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                     b.HasIndex("ClientId");
 
                     b.HasIndex("GoodsId");
+
+                    b.HasIndex("ImplementerId");
 
                     b.ToTable("Orders");
                 });
@@ -168,6 +195,12 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                     b.HasOne("BlacksmithWorkshopDatabaseImplement.Models.Goods", "Goods")
                         .WithMany("Orders")
                         .HasForeignKey("GoodsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BlacksmithWorkshopDatabaseImplement.Models.Implementer", "Implementer")
+                        .WithMany("Orders")
+                        .HasForeignKey("ImplementerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
