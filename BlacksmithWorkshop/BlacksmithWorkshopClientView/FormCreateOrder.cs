@@ -41,7 +41,7 @@ namespace BlacksmithWorkshopClientView
 				{
 					int id = Convert.ToInt32(comboBoxGoods.SelectedValue);
 					GoodsViewModel Goods =
-APIClient.GetRequest<GoodsViewModel>($"api/main/getGoods?GoodsId={id}");
+					APIClient.GetRequest<GoodsViewModel>($"api/main/getGoods?GoodsId={id}");
 					int count = Convert.ToInt32(textBoxCount.Text);
 					textBoxSum.Text = (count * Goods.Price).ToString();
 				}
