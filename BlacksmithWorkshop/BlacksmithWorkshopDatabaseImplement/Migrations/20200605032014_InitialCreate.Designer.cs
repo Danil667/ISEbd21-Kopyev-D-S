@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlacksmithWorkshopDatabaseImplement.Migrations
 {
     [DbContext(typeof(BlacksmithWorkshopDatabase))]
-    [Migration("20200522071411_InitialCreate")]
+    [Migration("20200605032014_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -149,7 +149,6 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("ImplementerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("Status")

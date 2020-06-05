@@ -99,7 +99,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ClientId = table.Column<int>(nullable: false),
                     GoodsId = table.Column<int>(nullable: false),
-                    ImplementerId = table.Column<int>(nullable: false),
+                    ImplementerId = table.Column<int>(nullable: true),
                     Count = table.Column<int>(nullable: false),
                     Sum = table.Column<decimal>(nullable: false),
                     Status = table.Column<int>(nullable: false),

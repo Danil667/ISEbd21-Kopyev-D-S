@@ -33,11 +33,11 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 					context.Orders.Add(element);
 				}
 				element.GoodsId = model.GoodsId == 0 ? element.GoodsId : model.GoodsId;
-				element.ClientId = model.ClientId == null ? element.ClientId : (int)model.ClientId;
+				element.ClientId = model.ClientId.Value;
 				element.Count = model.Count;
+				element.ImplementerId = model.ImplementerId;
 				element.Sum = model.Sum;
 				element.Status = model.Status;
-				element.ImplementerId = model.ImplementerId;
 				element.DateCreate = model.DateCreate;
 				element.DateImplement = model.DateImplement;
 				context.SaveChanges();
@@ -65,13 +65,14 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 		{
 			using (var context = new BlacksmithWorkshopDatabase())
 			{
-				return context.Orders.Where(rec => model == null || rec.Id == model.Id && model.Id.HasValue 
-				|| model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo
-									|| model.ClientId.HasValue && rec.ClientId == model.ClientId
-									|| model.FreeOrders.HasValue && model.FreeOrders.Value && !rec.ImplementerId.HasValue
-									|| model.ImplementerId.HasValue && rec.ImplementerId == model.ImplementerId && rec.Status == OrderStatus.Выполняется)
-			   .Select(rec => new OrderViewModel
-			   {
+				return context.Orders.Where(rec => model == null
+					|| rec.Id == model.Id && model.Id.HasValue
+					|| model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo
+					|| model.ClientId.HasValue && rec.ClientId == model.ClientId
+					|| model.FreeOrders.HasValue && model.FreeOrders.Value && !rec.ImplementerId.HasValue
+					|| model.ImplementerId.HasValue && rec.ImplementerId == model.ImplementerId && rec.Status == OrderStatus.Выполняется)
+				.Select(rec => new OrderViewModel
+				{
 				   Id = rec.Id,
 				   ClientId = rec.ClientId,
 				   ImplementerId = rec.ImplementerId,
@@ -83,8 +84,7 @@ namespace BlacksmithWorkshopDatabaseImplement.Implements
 				   DateCreate = rec.DateCreate,
 				   DateImplement = rec.DateImplement,
 				   ClientFIO = rec.Client.ClientFIO,
-				   ImplementerFIO = rec.ImplementerId.HasValue ?
-				rec.Implementer.ImplementerFIO : string.Empty,
+				   ImplementerFIO = rec.ImplementerId.HasValue ? rec.Implementer.ImplementerFIO : string.Empty,
 			   })
 			.ToList();
 			}

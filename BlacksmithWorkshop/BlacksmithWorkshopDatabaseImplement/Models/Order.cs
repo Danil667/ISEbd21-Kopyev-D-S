@@ -10,10 +10,9 @@ namespace BlacksmithWorkshopDatabaseImplement.Models
 	{
 		public int Id { get; set; }
 		public int ClientId { get; set; }
+		public int? ImplementerId { get; set; }
 		public int GoodsId { get; set; }
 		[Required]
-
-		public int? ImplementerId { get; set; }
 		public int Count { get; set; }
 		[Required]
 		public decimal Sum { get; set; }
