@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.компонентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,15 +39,13 @@
 			this.заготовкиПоТоварамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.списокЗаказовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.запускРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.сообщенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this.buttonCreateOrder = new System.Windows.Forms.Button();
 			this.buttonPayOrder = new System.Windows.Forms.Button();
 			this.buttonRef = new System.Windows.Forms.Button();
-			this.reportGoodsBilletsViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.сообщенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.reportGoodsBilletsViewModelBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -141,6 +138,13 @@
 			this.запускРаботToolStripMenuItem.Text = "Запуск работ";
 			this.запускРаботToolStripMenuItem.Click += new System.EventHandler(this.запускРаботToolStripMenuItem_Click);
 			// 
+			// сообщенияToolStripMenuItem
+			// 
+			this.сообщенияToolStripMenuItem.Name = "сообщенияToolStripMenuItem";
+			this.сообщенияToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+			this.сообщенияToolStripMenuItem.Text = "Сообщения";
+			this.сообщенияToolStripMenuItem.Click += new System.EventHandler(this.сообщенияToolStripMenuItem_Click);
+			// 
 			// dataGridView
 			// 
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -181,17 +185,6 @@
 			this.buttonRef.UseVisualStyleBackColor = true;
 			this.buttonRef.Click += new System.EventHandler(this.ButtonRef_Click);
 			// 
-			// reportGoodsBilletsViewModelBindingSource
-			// 
-			this.reportGoodsBilletsViewModelBindingSource.DataSource = typeof(BlacksmithWorkshopBusinessLogic.ViewModels.ReportGoodsBilletsViewModel);
-			// 
-			// сообщенияToolStripMenuItem
-			// 
-			this.сообщенияToolStripMenuItem.Name = "сообщенияToolStripMenuItem";
-			this.сообщенияToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-			this.сообщенияToolStripMenuItem.Text = "Сообщения";
-			this.сообщенияToolStripMenuItem.Click += new System.EventHandler(this.сообщенияToolStripMenuItem_Click);
-			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,7 +202,6 @@
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.reportGoodsBilletsViewModelBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -232,7 +224,6 @@
 		private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem исполнителиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem запускРаботToolStripMenuItem;
-		private System.Windows.Forms.BindingSource reportGoodsBilletsViewModelBindingSource;
 		private System.Windows.Forms.ToolStripMenuItem сообщенияToolStripMenuItem;
 	}
 }

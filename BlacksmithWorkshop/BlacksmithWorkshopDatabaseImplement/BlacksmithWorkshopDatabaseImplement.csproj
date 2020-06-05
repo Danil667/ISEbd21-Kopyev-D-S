@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Migrations\20200605032014_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200605032014_InitialCreate.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
