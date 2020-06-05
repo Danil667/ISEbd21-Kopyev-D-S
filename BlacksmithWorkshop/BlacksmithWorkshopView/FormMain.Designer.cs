@@ -45,6 +45,7 @@
 			this.buttonPayOrder = new System.Windows.Forms.Button();
 			this.buttonRef = new System.Windows.Forms.Button();
 			this.reportGoodsBilletsViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.сообщенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.reportGoodsBilletsViewModelBindingSource)).BeginInit();
@@ -55,7 +56,8 @@
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
-            this.запускРаботToolStripMenuItem});
+            this.запускРаботToolStripMenuItem,
+            this.сообщенияToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
 			this.menuStrip.Size = new System.Drawing.Size(1000, 24);
@@ -143,9 +145,9 @@
 			// 
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView.Location = new System.Drawing.Point(0, 28);
-			this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView.RowHeadersVisible = false;
 			this.dataGridView.Name = "dataGridView";
+			this.dataGridView.RowHeadersVisible = false;
+			this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView.Size = new System.Drawing.Size(733, 338);
 			this.dataGridView.TabIndex = 1;
 			// 
@@ -182,6 +184,13 @@
 			// reportGoodsBilletsViewModelBindingSource
 			// 
 			this.reportGoodsBilletsViewModelBindingSource.DataSource = typeof(BlacksmithWorkshopBusinessLogic.ViewModels.ReportGoodsBilletsViewModel);
+			// 
+			// сообщенияToolStripMenuItem
+			// 
+			this.сообщенияToolStripMenuItem.Name = "сообщенияToolStripMenuItem";
+			this.сообщенияToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+			this.сообщенияToolStripMenuItem.Text = "Сообщения";
+			this.сообщенияToolStripMenuItem.Click += new System.EventHandler(this.сообщенияToolStripMenuItem_Click);
 			// 
 			// FormMain
 			// 
@@ -224,5 +233,6 @@
 		private System.Windows.Forms.ToolStripMenuItem исполнителиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem запускРаботToolStripMenuItem;
 		private System.Windows.Forms.BindingSource reportGoodsBilletsViewModelBindingSource;
+		private System.Windows.Forms.ToolStripMenuItem сообщенияToolStripMenuItem;
 	}
 }

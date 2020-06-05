@@ -16,6 +16,7 @@ namespace BlacksmithWorkshopListImplement
 		public List<GoodsBillets> GoodsBilletss { get; set; }
 		public List<Client> Clients { get; set; }
 		public List<Implementer> Implementers { get; set; }
+		public List<MessageInfo> MessageInfoes { get; set; }
 		private DataListSingleton()
 		{
 			Billets = new List<Billets>();
@@ -24,6 +25,7 @@ namespace BlacksmithWorkshopListImplement
 			GoodsBilletss = new List<GoodsBillets>();
 			Clients = new List<Client>();
 			Implementers = new List<Implementer>();
+			MessageInfoes = new List<MessageInfo>();
 		}
 		public static DataListSingleton GetInstance()
 		{
