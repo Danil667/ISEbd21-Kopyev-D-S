@@ -32,6 +32,7 @@ namespace BlacksmithWorkshopRestApi
 			services.AddTransient<IOrderLogic, OrderLogic>();
 			services.AddTransient<IGoodsLogic, GoodsLogic>();
 			services.AddTransient<MainLogic>();
+			services.AddTransient<IMessageInfoLogic, MessageInfoLogic>();
 			services.AddControllers();
 		}
 
