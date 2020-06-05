@@ -45,6 +45,7 @@ namespace BlacksmithWorkshopView
 					dataGridView.Columns[0].Visible = false;
 					dataGridView.Columns[1].Visible = false;
 					dataGridView.Columns[2].Visible = false;
+					dataGridView.Columns[4].Visible = false;
 					dataGridView.Columns[5].Visible = false;
 					dataGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 				}
