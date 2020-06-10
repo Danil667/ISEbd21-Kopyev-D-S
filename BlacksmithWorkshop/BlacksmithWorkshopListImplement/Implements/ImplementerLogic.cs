@@ -34,11 +34,11 @@ namespace BlacksmithWorkshopListImplement.Implements
 				}
 			}
 			if (model.Id.HasValue)
-			{
+			{ 
 				if (tempImplementer == null)
 				{
 					throw new Exception("Исполнитель не найден");
-				}
+				}				
 				CreateModel(model, tempImplementer);
 			}
 			else
