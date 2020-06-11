@@ -10,9 +10,11 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 	public class MainLogic
 	{
 		private readonly IOrderLogic orderLogic;
-		public MainLogic(IOrderLogic orderLogic)
+		private readonly IStorageLogic storageLogic;
+		public MainLogic(IOrderLogic orderLogic, IStorageLogic storageLogic)
 		{
 			this.orderLogic = orderLogic;
+			this.storageLogic = storageLogic;
 		}
 		public void CreateOrder(CreateOrderBindingModel model)
 		{
@@ -24,6 +26,10 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 				DateCreate = DateTime.Now,
 				Status = OrderStatus.Принят
 			});
+		}
+		public void FillStorage(StorageBilletsBindingModel model)
+		{
+			storageLogic.FillStorage(model);
 		}
 		public void TakeOrderInWork(ChangeStatusBindingModel model)
 		{

@@ -18,7 +18,7 @@ namespace BlacksmithWorkshopListImplement.Implements
 		public void CreateOrUpdate(BilletsBindingModel model)
 		{
 			Billets tempBillets = model.Id.HasValue ? null : new Billets { Id = 1 };
-			foreach (var billets in source.Billets)
+			foreach (var billets in source.Billetss)
 			{
 				if (billets.BilletsName == model.BilletsName && billets.Id != model.Id)
 				{
@@ -43,16 +43,16 @@ namespace BlacksmithWorkshopListImplement.Implements
 			}
 			else
 			{
-				source.Billets.Add(CreateModel(model, tempBillets));
+				source.Billetss.Add(CreateModel(model, tempBillets));
 			}
 		}
 		public void Delete(BilletsBindingModel model)
 		{
-			for (int i = 0; i < source.Billets.Count; ++i)
+			for (int i = 0; i < source.Billetss.Count; ++i)
 			{
-				if (source.Billets[i].Id == model.Id.Value)
+				if (source.Billetss[i].Id == model.Id.Value)
 				{
-					source.Billets.RemoveAt(i);
+					source.Billetss.RemoveAt(i);
 					return;
 				}
 			}
@@ -61,7 +61,7 @@ namespace BlacksmithWorkshopListImplement.Implements
 		public List<BilletsViewModel> Read(BilletsBindingModel model)
 		{
 			List<BilletsViewModel> result = new List<BilletsViewModel>();
-			foreach (var billets in source.Billets)
+			foreach (var billets in source.Billetss)
 			{
 				if (model != null)
 				{

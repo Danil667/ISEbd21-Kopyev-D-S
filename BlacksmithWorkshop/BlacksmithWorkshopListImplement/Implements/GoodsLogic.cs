@@ -134,7 +134,7 @@ namespace BlacksmithWorkshopListImplement.Implements
 				if (pc.GoodsId == goods.Id)
 				{
 					string rawName = string.Empty;
-					foreach (var raw in source.Billets)
+					foreach (var raw in source.Billetss)
 					{
 						if (pc.BilletsId == raw.Id)
 						{
