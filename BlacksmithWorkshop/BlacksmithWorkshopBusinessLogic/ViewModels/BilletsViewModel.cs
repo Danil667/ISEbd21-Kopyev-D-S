@@ -1,14 +1,18 @@
-﻿using System;
+﻿using BlacksmithWorkshopBusinessLogic.Attributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
 namespace BlacksmithWorkshopBusinessLogic.ViewModels
 {
-	public class BilletsViewModel
+	public class BilletsViewModel : BaseViewModel
 	{
-		public int Id { get; set; }
-		[DisplayName("Название компонента")]
+		[Column(title: "Заготовка", gridViewAutoSize: GridViewAutoSize.Fill)]
 		public string BilletsName { get; set; }
+		public override List<string> Properties() => new List<string>
+		{
+			"BilletsName"
+		};
 	}
 }

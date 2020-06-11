@@ -44,6 +44,7 @@
 			this.buttonCreateOrder = new System.Windows.Forms.Button();
 			this.buttonPayOrder = new System.Windows.Forms.Button();
 			this.buttonRef = new System.Windows.Forms.Button();
+			this.создатьБэкапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.SuspendLayout();
@@ -54,7 +55,8 @@
             this.справочникиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
             this.запускРаботToolStripMenuItem,
-            this.сообщенияToolStripMenuItem});
+            this.сообщенияToolStripMenuItem,
+            this.создатьБэкапToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
 			this.menuStrip.Size = new System.Drawing.Size(1000, 24);
@@ -185,6 +187,13 @@
 			this.buttonRef.UseVisualStyleBackColor = true;
 			this.buttonRef.Click += new System.EventHandler(this.ButtonRef_Click);
 			// 
+			// создатьБэкапToolStripMenuItem
+			// 
+			this.создатьБэкапToolStripMenuItem.Name = "создатьБэкапToolStripMenuItem";
+			this.создатьБэкапToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+			this.создатьБэкапToolStripMenuItem.Text = "Создать бэкап";
+			this.создатьБэкапToolStripMenuItem.Click += new System.EventHandler(this.создатьБэкапToolStripMenuItem_Click);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,5 +234,6 @@
 		private System.Windows.Forms.ToolStripMenuItem исполнителиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem запускРаботToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem сообщенияToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem создатьБэкапToolStripMenuItem;
 	}
 }
