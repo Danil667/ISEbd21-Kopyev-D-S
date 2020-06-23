@@ -62,7 +62,8 @@ namespace BlacksmithWorkshopFileImplement.Implements
 			.Select(rec => new OrderViewModel
 			{
 				Id = rec.Id,
-				GoodsName = GetGoodsName(rec.GoodsId),
+				GoodsID = rec.GoodsId,
+				GoodsName = source.Goodss.FirstOrDefault(x => x.Id == rec.GoodsId)?.GoodsName,
 				Count = rec.Count,
 				Sum = rec.Sum,
 				Status = rec.Status,
@@ -70,14 +71,6 @@ namespace BlacksmithWorkshopFileImplement.Implements
 				DateImplement = rec.DateImplement
 			})
 			.ToList();
-		}
-
-		private string GetGoodsName(int id)
-		{
-			string name = "";
-			var goods = source.Goodss.FirstOrDefault(x => x.Id == id);
-			name = goods != null ? goods.GoodsName : "";
-			return name;
 		}
 	}
 }

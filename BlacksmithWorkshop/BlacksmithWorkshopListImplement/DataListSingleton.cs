@@ -12,6 +12,8 @@ namespace BlacksmithWorkshopListImplement
 		private static DataListSingleton instance;
 		public List<Billets> Billets { get; set; }
 		public List<Order> Orders { get; set; }
+		public List<Storage> Storages { get; set; }
+		public List<StorageBillets> StorageBilletss { get; set; }
 		public List<Goods> Goods { get; set; }
 		public List<GoodsBillets> GoodsBillets { get; set; }
 		private DataListSingleton()
@@ -20,6 +22,8 @@ namespace BlacksmithWorkshopListImplement
 			Orders = new List<Order>();
 			Goods = new List<Goods>();
 			GoodsBillets = new List<GoodsBillets>();
+			Storages = new List<Storage>();
+			StorageBilletss = new List<StorageBillets>();
 		}
 		public static DataListSingleton GetInstance()
 		{

@@ -32,6 +32,7 @@ namespace BlacksmithWorkshopView
 			currentContainer.RegisterType<IOrderLogic, OrderLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<IBilletsLogic, BilletsLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<MainLogic>(new HierarchicalLifetimeManager());
+			currentContainer.RegisterType<IStorageLogic, StorageLogic>(new HierarchicalLifetimeManager());
 			return currentContainer;
 		}
 	}

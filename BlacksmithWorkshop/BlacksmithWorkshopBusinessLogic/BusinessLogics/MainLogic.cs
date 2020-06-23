@@ -10,9 +10,11 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 	public class MainLogic
 	{
 		private readonly IOrderLogic orderLogic;
-		public MainLogic(IOrderLogic orderLogic)
+		private readonly IStorageLogic storageLogic;
+		public MainLogic(IOrderLogic orderLogic, IStorageLogic storageLogic)
 		{
 			this.orderLogic = orderLogic;
+			this.storageLogic = storageLogic;
 		}
 		public void CreateOrder(CreateOrderBindingModel model)
 		{
@@ -36,6 +38,10 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 			{
 				throw new Exception("Заказ не в статусе \"Принят\"");
 			}
+			if (!storageLogic.CheckBilletssAvailability(order.GoodsID, order.Count))
+			{
+				throw new Exception("На складах не хватает заготовок");
+			}
 			orderLogic.CreateOrUpdate(new OrderBindingModel
 			{
 				Id = order.Id,
@@ -46,6 +52,11 @@ namespace BlacksmithWorkshopBusinessLogic.BusinessLogics
 				DateImplement = DateTime.Now,
 				Status = OrderStatus.Выполняется
 			});
+			storageLogic.RemoveFromStorage(order.GoodsID, order.Count);
+		}
+		public void FillStorage(StorageBilletsBindingModel model)
+		{
+			storageLogic.FillStorage(model);
 		}
 		public void FinishOrder(ChangeStatusBindingModel model)
 
