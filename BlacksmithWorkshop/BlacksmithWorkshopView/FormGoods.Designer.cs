@@ -97,12 +97,12 @@
 			// Billets
 			// 
 			this.Billets.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Billets.HeaderText = "Billets";
+			this.Billets.HeaderText = "Заготовка";
 			this.Billets.Name = "Billets";
 			// 
 			// Count
 			// 
-			this.Count.HeaderText = "Count";
+			this.Count.HeaderText = "Количество";
 			this.Count.Name = "Count";
 			// 
 			// buttonRef
